@@ -59,7 +59,7 @@ const Navigation = () => {
                     auth?.user?.role === 1 ? "admin" : "Profile"
                   }`}
                 >
-                  <button className="me-4 mt-1 short-btn">
+                  <button className="long-btn-cart me-4 mt-1 d-flex justify-content-center py-1">
                     <FontAwesomeIcon
                       icon={faCircleUser}
                       className="fs-4 align-center "
