@@ -57,7 +57,7 @@ const Buycard = ({ product }) => {
     <Card
       className="buycard"
       style={{
-        width: "26.67vw",
+        width: "20.67vw",
 
         border: "3px solid black",
         boxShadow: "5px 5px 1px black",
