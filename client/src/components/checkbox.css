@@ -1,0 +1,32 @@
+.custom-checkbox .form-check-input {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    transition: all 0.3s;
+    position: relative;
+    margin-top: 0.3rem;
+    cursor: pointer;
+  }
+  
+  .custom-checkbox .form-check-input:checked {
+    background-color: #1890ff; /* AntD primary color */
+    border-color: #1890ff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' fill='%23fff' d='M6.293 10.293a1 1 0 011.414 0L11.293 5.707a1 1 0 10-1.414-1.414L7 8.586 4.707 6.293a1 1 0 00-1.414 1.414l2.586 2.586z'/%3E%3C/svg%3E");
+    background-size: 12px 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .custom-checkbox .form-check-input:hover {
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 4px rgba(24, 144, 255, 0.2);
+  }
+  
+  .custom-checkbox .form-check-label {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #595959;
+    cursor: pointer;
+  }
+  

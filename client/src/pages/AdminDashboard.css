@@ -1,0 +1,116 @@
+/* General Dashboard Layout */
+.dashboard {
+    display: flex;
+    font-family: Arial, sans-serif;
+  }
+
+  .table-button{
+    display: flex;
+    gap: 3rem;
+    flex-direction: row;
+  }
+  
+  /* Sidebar Styles */
+  .dashboard_sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar_heading {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .sidebar_btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+    background-color: #eaeaea;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar_btn:hover {
+    background-color: #ccc;
+  }
+  
+  /* Main Content Styles */
+  .dashboard_main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .main_section {
+    margin-top: 20px;
+  }
+  
+  .section_heading {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styles */
+  .category_form,
+  .product_form {
+    margin-bottom: 20px;
+  }
+  
+  .form_label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .form_input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .form_submit_btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form_submit_btn:hover {
+    background-color: #45a049;
+  }
+  
+  /* User List Styles */
+  .user_list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user_list_item {
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    color: #333;
+  }
+  
+  .user_list_item:hover {
+    background-color: #ececec;
+  }
+  

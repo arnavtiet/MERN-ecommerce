@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.custom-font {
+  font-family: "New Amsterdam", sans-serif;
+  
+  font-style: normal;
+  font-size: small;
+}
+
+.custom-font-light {
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings:
+    "width" 100;
+
+}
+
+.custom-font-medium {
+  font-family: "Open Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+
+}
+
+.buycard:hover {
+  transform: translateY(-1rem);
+
+  .buycard-img {
+
+    transform: scale(1.1);
+  }
+}
+
+.buycard {
+  transition: all 0.3s;
+  overflow: hidden;
+  
+}
+
+.buycard-img {
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  min-height: 19rem;
+  max-height: auto;
+}
+
+.buy-btn {
+  position: relative;
+  box-sizing: border-box;
+  color: black;
+  background-color: white;
+  border: 3px solid black;
+  transform: translateY(-10px);
+  border-radius: 0px;
+  height: 3rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem;
+  transition: all 0.7s;
+  overflow: hidden;
+  transition: all 0.7s;
+  box-shadow: 5px 5px 1px black;
+
+}
+
+
+.buy-btn:hover {
+  width: 6rem;
+  border-radius: 5px;
+  box-shadow: none;
+  background-color: black;
+  border: 1px solid black;
+
+  .add-to-cart {
+    animation: slide 1.5s linear infinite;
+  }
+
+
+}
+
+
+.add-to-cart {
+  position: absolute;
+  display: flex;
+  justify-self: center;
+  top: 40%;
+  left: 20%;
+  transform: translateX(-50%) scale(1.6);
+  transition: all 0.4s ease-in-out;
+  white-space: nowrap;
+  text-transform: capitalize;
+  color: white;
+}
+
+.cart-icon {
+  transform: scale(1.6);
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes slide {
+  0% {
+    left: -50px;
+  }
+
+  50% {
+    left: 50%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-10px);
+  }
+
+  75% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
+
+}
+
+
+.wobble {
+  animation: wobble 1s infinite;
+}
+
+.added {
+  background-color: blue;
+}
+
+.card-line{
+  background-color: black;
+  border-color: black !important;
+  border-width: 0rem;
+  height: 1.5px;
+  overflow: hidden;
+}
+
+.button-container {
+  position: relative;
+  display: inline-block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.liked{
+  color: red;
+}
+
+.liked-button:hover{
+  color: red;
+}
+.like-button-container{
+  position: relative;
+  box-sizing: border-box;
+  color: black;
+  background-color: white;
+  border: 6px solid black;
+  transform: translateY(-10px);
+  border-radius: 0px;
+  height: 3rem;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem;
+  transition: all 0.7s;
+  overflow: hidden;
+  transition: all 0.7s;
+  box-shadow: 5px 5px 1px black;
+}

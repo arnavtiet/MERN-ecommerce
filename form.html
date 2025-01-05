@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0eafc;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        label {
+            font-size: 1em;
+            margin-bottom: 6px;
+            display: block;
+            color: #555;
+        }
+        input[type="text"], input[type="password"], textarea, input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease-in-out;
+        }
+        input[type="text"]:focus, input[type="password"]:focus, textarea:focus, input[type="file"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease-in-out;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <fieldset>
+        <legend>Registration</legend>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+    </fieldset>
+
+    <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" name="sex" id="male" value="male">
+        <label for="male">Male</label>
+
+        <input type="radio" name="sex" id="female" value="female">
+        <label for="female">Female</label>
+    </fieldset>
+
+    <fieldset>
+        <label for="file-select">Upload form:</label>
+        <input type="file" name="upload" id="file-select">
+    </fieldset>
+
+    <fieldset>
+        <label for="address">Address:</label>
+        <textarea rows="3" cols="30" name="address" id="address"></textarea>
+    </fieldset>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

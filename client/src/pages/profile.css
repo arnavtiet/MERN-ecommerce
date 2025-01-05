@@ -1,0 +1,102 @@
+/* profile.css */
+@import url("https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap");
+
+.reg-profile-pic {
+  height: 35rem;
+  width: 30rem;
+}
+
+.reg-profile-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 70vw;
+  margin-top: 30px;
+}
+
+.reg-profile-user-info {
+  width: 100%;
+  border-bottom: 3px solid gray;
+}
+
+.reg-profile-name {
+  font-size: 4rem;
+  font-family: "New Amsterdam", sans-serif;
+  margin-bottom: 1rem;
+}
+
+.reg-profile-phone,
+.reg-profile-email {
+  font-family: "New Amsterdam", sans-serif;
+  margin-bottom: 1rem;
+  font-size: 2.3rem;
+  font-weight: 100;
+}
+
+.reg-profile-edit-form-container {
+  width: 70vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.reg-profile-edit-form {
+  width: 100%;
+}
+
+.reg-profile-edit-form-table {
+  padding-top: 30px;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.reg-profile-edit-form-name,
+.reg-profile-edit-form-addr,
+.reg-profile-edit-form-phone,
+.reg-profile-edit-form-email {
+  width: 52rem;
+  height: 3rem;
+  font-size: 3rem;
+  text-align: center;
+  font-family: "New Amsterdam", sans-serif;
+  border: 4px solid black;
+  background-color: #d5bdaf;
+}
+
+.reg-profile-edit-form-phone {
+  width: 30vw;
+}
+
+.reg-profile-edit-form-email {
+  width: 40vw;
+}
+
+.reg-profile-sec-row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.reg-profile-edit-form-submit-row {
+  display: flex;
+  align-items: center;
+  width: inherit;
+}
+
+.reg-profile-edit-form-submit {
+  border-radius: 0.5rem;
+  height: 3.25rem;
+  width: 8.7rem;
+  border: white solid 0.2rem;
+  font-size: 1.7rem;
+  box-shadow: 5px 5px #d5bdaf;
+  transition: all 0.2s;
+  font-family: "New Amsterdam", sans-serif;
+  background-color: white;
+}
+
+.reg-profile-edit-form-submit:hover {
+  transform: translateX(3px) translateY(3px);
+  box-shadow: 2px 2px #d5bdaf;
+}

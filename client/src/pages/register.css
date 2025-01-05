@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap");
+
+/* Main container setting up a grid layout with three columns */
+.reg-container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40fr 10fr 40fr;
+  grid-template-rows: 0;
+}
+
+/* Centered table within the form */
+.reg-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main form container with increased size and shadow effect */
+.reg-form-container {
+  grid-column: 3;
+  background-color: blanchedalmond;
+  justify-content: center;
+  border-radius: 2.28rem; /* Increased by 20% */
+  height: 84vh; /* Increased by 20% */
+  box-shadow: 0.6rem 0.6rem #D5BDAF; /* Increased by 20% */
+  transition: all 0.2s;
+  margin-top: 1.44rem; /* Increased by 20% */
+  width: 96%; /* Increased by 20% */
+}
+
+/* Title styling for the form with increased font size */
+.reg-form-title {
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 900;
+  font-size: 3.36rem; /* Increased by 20% */
+  font-style: normal;
+  text-align: center;
+}
+
+/* Form container to occupy full height and width */
+.reg-form {
+  height: 100%;
+  width: 100%;
+}
+
+/* Styling for the logo section within the form */
+.reg-form-logo {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem; /* Increased by 20% */
+  justify-content: center;
+  margin-left: 5rem;
+}
+
+/* Common row settings for all input fields with increased height */
+.reg-first-row,
+.reg-second-row,
+.reg-third-row,
+.reg-fourth-row,
+.reg-fifth-row,
+.reg-sixth-row,
+.reg-seventh-row,
+.reg-eighth-row,
+.reg-ninth-row {
+  width: 90%;
+  height: 4.8vh; /* Increased by 20% */
+}
+
+/* General input styling applied to all rows with increased size */
+.reg-first-row input,
+.reg-second-row input,
+.reg-third-row input,
+.reg-fourth-row input,
+.reg-fifth-row input {
+  width: 90%; /* Increased by 20% */
+  height: 3.312rem; /* Increased by 20% */
+  border-radius: 0.84rem; /* Increased by 20% */
+  border: none;
+  font-family: "New Amsterdam", sans-serif;
+  font-size: 1.248rem; /* Increased by 20% */
+  text-indent: 0.48rem; /* Increased by 20% */
+  letter-spacing: 0.096rem; /* Increased by 20% */
+  text-align: left;
+  color: #aaa;
+  margin-left: 1.2rem; /* Increased by 20% */
+}
+
+.reg-eighth-row{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Placeholder styling for input fields with increased font size */
+.reg-first-row input::placeholder,
+.reg-second-row input::placeholder,
+.reg-third-row input::placeholder,
+.reg-fourth-row input::placeholder,
+.reg-fifth-row input::placeholder {
+  font-family: "New Amsterdam", sans-serif;
+  font-size: 1.248rem; /* Increased by 20% */
+  text-indent: 0.48rem; /* Increased by 20% */
+  letter-spacing: 0.192rem; /* Increased by 20% */
+  text-align: left;
+  color: #aaa;
+}
+
+/* Specific height adjustment for the fourth row input */
+.reg-fourth-row input {
+  height: 4.032rem; /* Increased by 20% */
+}
+
+/* Flexbox settings for sixth and seventh rows with adjusted spacing */
+
+.reg-seventh-row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+  h1 {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-top: 0.66rem; /* Increased by 20% */
+    margin-left: 1.8rem; /* Increased by 20% */
+    margin-bottom: 0;
+  }
+}
+.reg-six-row{
+  margin-left: 10px;
+  
+}
+/* Styling for the ninth row header and link */
+.reg-ninth-row h3 {
+  margin-top: 0.68rem; /* Increased by 20% */
+  text-align: center;
+  margin-left: 5rem;
+  
+  font-size: 1.932rem; /* Increased by 20% */
+  font-weight: 400;
+}
+
+.reg-ninth-row h3 a {
+  color: #df4f39;
+  text-decoration: none;
+}
+
+/* Submit button styling with increased size */
+.reg-submit-btn {
+ 
+  /* Increased by 20% */
+  border-radius: 24px; /* Increased by 20% */
+  height: 4.12rem; /* Increased by 20% */
+  width: 14.08rem; /* Increased by 20% */
+  border: #edede9 solid 0.24rem; /* Increased by 20% */
+  font-size: 1.932rem; /* Increased by 20% */
+  box-shadow: 6px 6px #d5bdaf; /* Increased by 20% */
+  transition: all 0.2s;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+}
+
+/* Facebook submit button styling with increased size */
+.reg-submit-logo-btn-facebook {
+  margin-top: 1.2rem; /* Increased by 20% */
+  border-radius: 0.6rem; /* Increased by 20% */
+  height: 3.12rem; /* Increased by 20% */
+  width: 9.552rem; /* Increased by 20% */
+  border: #1774F2 solid 0.24rem; /* Increased by 20% */
+  font-size: 1.632rem; /* Increased by 20% */
+  font-weight: 1px;
+  box-shadow: 4.8px 4.8px white; /* Increased by 20% */
+  transition: all 0.2s;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background-color: #1774F2;
+}
+
+.reg-submit-logo-btn-facebook:hover {
+  transform: translateX(2.88px) translateY(2.88px); /* Increased by 20% */
+  box-shadow: 1.92px 1.92px white; /* Increased by 20% */
+}
+
+/* Google submit button styling with increased size */
+.reg-submit-logo-btn-google {
+  margin-top: 1.2rem; /* Increased by 20% */
+  border-radius: 0.6rem; /* Increased by 20% */
+  height: 3.12rem; /* Increased by 20% */
+  width: 8.16rem; /* Increased by 20% */
+  border: #DF4F39 solid 0.24rem; /* Increased by 20% */
+  font-size: 1.632rem; /* Increased by 20% */
+  font-weight: 1px;
+  box-shadow: 4.8px 4.8px white; /* Increased by 20% */
+  transition: all 0.2s;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background-color: #DF4F39;
+}
+
+.reg-submit-logo-btn-google:hover {
+  transform: translateX(2.88px) translateY(2.88px); /* Increased by 20% */
+  box-shadow: 1.92px 1.92px white; /* Increased by 20% */
+}
+
+/* Apple submit button styling with increased size */
+.reg-submit-logo-btn-apple {
+  margin-top: 1.2rem; /* Increased by 20% */
+  border-radius: 0.6rem; /* Increased by 20% */
+  height: 3.12rem; /* Increased by 20% */
+  width: 8.16rem; /* Increased by 20% */
+  border: black solid 0.24rem; /* Increased by 20% */
+  font-size: 1.632rem; /* Increased by 20% */
+  font-weight: 1px;
+  box-shadow: 4.8px 4.8px white; /* Increased by 20% */
+  transition: all 0.2s;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background-color: black;
+}
+
+.reg-submit-logo-btn-apple:hover {
+  transform: translateX(2.88px) translateY(2.88px); /* Increased by 20% */
+  box-shadow: 1.92px 1.92px white; /* Increased by 20% */
+}
+
+/* Image styling for the right column */
+.reg-image-right {
+  grid-column: 3;
+  grid-row: 2;
+  height: 100vh;
+}
+
+.reg-image-right img {
+
+  margin-top: 0.88rem;
+  margin-left: 11rem;
+  width: 93vh; /* Increased by 20% */
+  height:94vh; /* Increased by 20% */
+}
+
+/* Image styling for the left column */
+.reg-image-left {
+  grid-column: 1;
+}
+
+.reg-image-left img {
+  margin-top: 0.88rem;
+  margin-left: 11rem;
+  width: 93vh; /* Increased by 20% */
+  height:94vh; /* Increased by 20% */
+}
+
+/* Separator line styling on the left side */
+.reg-seperator-left {
+  width: 9.6rem; /* Increased by 20% */
+  background-color: gray;
+  height: 0.096rem; /* Increased by 20% */
+  transform: translateY(2.688rem); /* Increased by 20% */
+  margin-left: 3.072rem; /* Increased by 20% */
+  margin-top: -1.2rem; /* Increased by 20% */
+}
+
+/* Separator line styling on the right side */
+.reg-seperator-right {
+  width: 9.6rem; /* Increased by 20% */
+  background-color: gray;
+  height: 0.096rem; /* Increased by 20% */
+  transform: translateY(2.688rem); /* Increased by 20% */
+  margin-left: 0;
+  margin-top: -1.2rem; /* Increased by 20% */
+}
+
+/* Eighth row height adjustment */
+.reg-eighth-row {
+  height: 3.6rem; /* Increased by 20% */
+}
+
+/* Increased hover effect size */
+.reg-submit-btn:hover {
+  transform: translateX(3.6px) translateY(3.6px); /* Increased by 20% */
+  box-shadow: 2.4px 2.4px #d5bdaf; /* Increased by 20% */
+}
+.custom-toast {
+  font-size: 2rem; /* Adjust the font size */
+  padding: 1.6rem; /* Adjust padding for larger size */
+  min-width: 300px; /* Increase width if needed */
+  border-radius: 10px; /* Optional: Make the corners rounder */
+  width: 500px;
+  text-align: center;
+  
+}
+.bg-custom-reg{
+  background-color: blanchedalmond;
+  box-shadow: 0.5rem 0.5rem  #D5BDAF;
+  border-radius: 2vw !important;
+
+}
+
+.reg-custom-input{
+  user-select: none;
+  font-family: "New Amsterdam", sans-serif;
+  font-size: 1.3rem;
+  text-indent: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-align: left;
+  color: #aaa;
+}

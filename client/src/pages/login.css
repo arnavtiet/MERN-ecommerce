@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap");
+
+.cont {
+  margin-top: 10vh;
+  height: 90vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30fr 40fr 30fr;
+  grid-template-rows: 0;
+}
+
+.bg-custom{
+  background-color: blanchedalmond;
+  box-shadow: 0.5rem 0.5rem  #D5BDAF;
+
+}
+.form-container {
+  padding-top: 5rem;
+  grid-column: 2;
+  background-color: blanchedalmond;
+  margin: 1rem;
+  border-radius: 1.3rem;
+  height: 59vh;
+ 
+  transition: all 0.2s;
+  margin-top: 1.2rem;
+}
+
+.form-title {
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  font-style: normal;
+  text-align: center;
+}
+.form {
+  height: 100%;
+  width: 100%;
+}
+
+.form-logo {
+  display: flex;
+  flex-direction: rows;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.first-row {
+  width: 80%;
+  input {
+    
+    width: 70%;
+    height: 2.2rem;
+    border-radius: 0.7rem;
+    border: none;
+    user-select: none;
+    font-family: "New Amsterdam", sans-serif;
+    font-size: 1.3rem;
+    text-indent: 0.5rem;
+    letter-spacing: 0.2rem;
+    text-align: left;
+    color: #aaa;
+  }
+  input::placeholder {
+    font-family: "New Amsterdam", sans-serif;
+    font-size: 1.3rem;
+    text-indent: 0.5rem;
+    letter-spacing: 0.2rem;
+    text-align: left;
+    color: #aaa; /* adjust the color to your liking */
+  }
+}
+
+.custom-input{
+  user-select: none;
+  font-family: "New Amsterdam", sans-serif;
+  font-size: 1.3rem;
+  text-indent: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-align: left;
+  color: #aaa;
+}
+.custom-input::placeholder{
+  font-family: "New Amsterdam", sans-serif;
+  font-size: 1.3rem;
+  text-indent: 0.5rem;
+  letter-spacing: 0.2rem;
+  text-align: left;
+  color: #aaa; 
+}
+.custom-input:focus {
+  box-shadow: 0 0 5px 2px rgba(255, 42, 0, 0.5); /* Adjust the color and spread */
+  border-color: #ff0800; /* Match the border color to the shadow */
+}
+
+.second-row {
+  width: 80%;
+  input {
+    width: 70%;
+    height: 2.2rem;
+    border-radius: 0.7rem;
+    border: none;
+    font-family: "New Amsterdam", sans-serif;
+    font-size: 1.3rem;
+    text-indent: 0.5rem;
+    letter-spacing: 0.1rem;
+    text-align: left;
+    color: #aaa;
+  }
+  input::placeholder {
+    font-family: "New Amsterdam", sans-serif;
+    font-size: 1.3rem;
+    text-indent: 0.5rem;
+    letter-spacing: 0.2rem;
+    text-align: left;
+    color: #aaa; /* adjust the color to your liking */
+  }
+}
+.fourth-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  h1 {
+    text-align: center;
+    font-size: large;
+    font-weight: 100;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.sixth-row{
+    
+    width: 80%;
+    h3{
+        margin-top: 1.4rem;
+    text-align:center;
+        font-size: 1.7rem;
+        font-weight: 400;
+        a{
+            color: #DF4F39;
+            text-decoration: none;
+        }
+    }
+   
+}
+
+.submit-btn {
+  margin-top: 1rem;
+  border-radius: 20px;
+  height: 3.25rem;
+  width: 10.5rem;
+  border: #edede9 solid 0.2rem;
+  font-size: 1.7rem;
+  font-weight: 1px;
+  box-shadow: 5px 5px #d5bdaf;
+  transition: all 0.2s;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+.submit-logo-btn-facebook {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  height: 3.25rem;
+  width: 8.7rem;
+  border: #1774F2 solid 0.2rem;
+  font-size: 1.7rem;
+  font-weight: 1px;
+  box-shadow: 5px 5px white;
+  transition: all 0.2s;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background-color: #1774F2;
+
+}
+.submit-logo-btn-facebook:hover{
+    transform: translateX(3px) translateY(3px);
+  box-shadow: 2px 2px white;
+
+}
+.submit-logo-btn-google {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  height: 3.25rem;
+  width: 8.5rem;
+  border: #DF4F39 solid 0.2rem;
+  font-size: 1.7rem;
+  font-weight: 1px;
+  box-shadow: 5px 5px white;
+  transition: all 0.2s;
+  font-family: "New Amsterdam", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  background-color: #DF4F39;
+}
+
+.submit-logo-btn-google:hover{
+    transform: translateX(3px) translateY(3px);
+  box-shadow: 2px 2px white;
+
+}
+.submit-logo-btn-apple {
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    height: 3.25rem;
+    width: 8.5rem;
+    border: black solid 0.2rem;
+    font-size: 1.7rem;
+    font-weight: 1px;
+    box-shadow: 5px 5px rgba(255, 255, 255, 0.753);
+    transition: all 0.2s;
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    background-color: black;
+}
+.submit-logo-btn-apple:hover{
+    transform: translateX(3px) translateY(3px);
+  box-shadow: 2px 2px white;
+
+}
+.submit-btn:hover {
+    transform: translateX(3px) translateY(3px);
+    box-shadow: 2px 2px #d5bdaf;
+}
+
+
+.image-right{
+    grid-column: 3;
+    grid-row: 2;
+    height: 100vh;
+    img{
+        margin-top: 0;
+        width: auto;
+        height: 70vh;
+    }
+}
+
+.image-left{
+    grid-column: 1;
+    img{
+        margin-left:7rem;
+        margin-top: 3rem;
+        height: 60vh;
+        width: auto;
+    }
+}
+
+.seperator-left{
+    width: 10rem;
+    background-color: gray;
+    height: 0.1rem;
+    transform: translateY(2.8rem);
+    margin-left: 0.7rem;
+    
+}
+.seperator-right{
+    width: 10rem;
+    background-color: gray;
+    height: 0.1rem;
+    transform: translateY(2.8rem);
+    margin-left: 0.7rem;
+    
+}
+
+.large-toast {
+  font-size: 24px; /* increase font size */
+  padding: 16px; /* increase padding */
+  border-radius: 10px; /* increase border radius */
+}
