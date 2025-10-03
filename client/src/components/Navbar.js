@@ -15,79 +15,86 @@ const Navigation = () => {
   const [auth, setAuth] = CreateAuth();
   const [cart] = useCart();
   const [cartcount, setcartCount] = useState(cart.length);
+  const [isExpanded, setIsExpanded] = useState(false);
+
   const logOut = () => {
     setAuth({ ...auth, user: null, token: "" });
     localStorage.removeItem("auth");
     toast.success("logout success");
   };
+
   useEffect(() => {
     setcartCount(cart.length);
   }, [cart]);
   return (
     <>
-      {/* second navbar */}
-      <Navbar className="nav" sticky="top">
+      {" "}
+      {/* Responsive navbar */}
+      <Navbar className="nav" sticky="top" expand="lg" expanded={isExpanded}>
         <Container className="ms-1">
-          {/* Left side */}
-          <Navbar.Brand className=" ms-0">
+          {/* Left side - Logo */}
+          <Navbar.Brand className="ms-0">
             <Link to="/">
               <Image
                 src={require("../logo.jpg")}
                 alt="logo here"
-                className="logo "
+                className="logo"
               />
             </Link>
           </Navbar.Brand>
 
-          {/* Right side */}
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          {/* Mobile toggle button */}
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            onClick={() => setIsExpanded(!isExpanded)}
+          />
+
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto py-5">
-              <Nav.Item>
-                <Link to="/Orders">
-                  <button className=" long-btn-cart me-4 mt-1 fs-3">
+            {/* Center navigation items */}
+            <Nav className="me-auto">
+              <Nav.Item className="nav-item-responsive">
+                <Link to="/Orders" onClick={() => setIsExpanded(false)}>
+                  <button className="long-btn-cart me-4 mt-1 fs-3">
                     <Badge size="small" count={cartcount}>
-                      <FontAwesomeIcon icon={faCartShopping} className="fs-4" />{" "}
+                      <FontAwesomeIcon icon={faCartShopping} className="fs-4" />
                     </Badge>
                   </button>
                 </Link>
               </Nav.Item>
 
-              <Nav.Item>
+              <Nav.Item className="nav-item-responsive">
                 <Link
                   to={`Dashboard/${
                     auth?.user?.role === 1 ? "admin" : "Profile"
                   }`}
+                  onClick={() => setIsExpanded(false)}
                 >
                   <button className="long-btn-cart me-4 mt-1 d-flex justify-content-center py-1">
                     <FontAwesomeIcon
                       icon={faCircleUser}
-                      className="fs-4 align-center "
+                      className="fs-4 align-center"
                     />
                   </button>
                 </Link>
               </Nav.Item>
             </Nav>
+
+            {/* Right side - Login/Logout */}
+            <Nav className="ms-auto">
+              {!auth.user ? (
+                <Link to="/Login" onClick={() => setIsExpanded(false)}>
+                  <button className="long-btn">Login</button>
+                </Link>
+              ) : (
+                <Link to="/Login" onClick={() => setIsExpanded(false)}>
+                  <button className="long-btn" onClick={logOut}>
+                    Logout
+                  </button>
+                </Link>
+              )}
+            </Nav>
           </Navbar.Collapse>
         </Container>
-        <Nav className="me-4 ">
-          {!auth.user ? (
-            <>
-              {" "}
-              <Link to="/Login">
-                <button className="long-btn ">Login</button>
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link to="/Login">
-                <button className="long-btn" onClick={logOut}>
-                  Logout
-                </button>
-              </Link>
-            </>
-          )}
-        </Nav>
       </Navbar>
     </>
   );

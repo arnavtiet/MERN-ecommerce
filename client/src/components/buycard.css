@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 .custom-font {
   font-family: "New Amsterdam", sans-serif;
-  
+
   font-style: normal;
   font-size: small;
 }
@@ -13,9 +13,7 @@
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
-  font-variation-settings:
-    "width" 100;
-
+  font-variation-settings: "width" 100;
 }
 
 .custom-font-medium {
@@ -23,24 +21,22 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-
+  font-variation-settings: "wdth" 100;
 }
 
 .buycard:hover {
-  transform: translateY(-1rem);
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.3) !important;
 
   .buycard-img {
-
     transform: scale(1.1);
   }
 }
 
 .buycard {
-  transition: all 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 auto;
   overflow: hidden;
-  
 }
 
 .buycard-img {
@@ -48,6 +44,87 @@
   transition: transform 0.3s ease-in-out;
   min-height: 19rem;
   max-height: auto;
+}
+
+/* Desktop - 3 cards per row */
+@media (min-width: 992px) {
+  .buycard {
+    width: 100% !important;
+    max-width: 320px;
+  }
+}
+
+/* Tablet - 2 cards per row */
+@media (min-width: 768px) and (max-width: 991px) {
+  .buycard {
+    width: 100% !important;
+    max-width: 350px;
+  }
+}
+
+/* Mobile - 1 card per column in list view */
+@media (max-width: 767px) {
+  .buycard {
+    width: 100% !important;
+    max-width: none;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile list layout */
+  .mobile-product-item .buycard {
+    display: flex;
+    flex-direction: row;
+    min-height: auto;
+    max-height: 200px;
+  }
+
+  .mobile-product-item .buycard .card-img-top {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .mobile-product-item .buycard .card-body {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-product-item .buycard .card-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .mobile-product-item .card-line {
+    display: none;
+  }
+
+  .mobile-product-item .d-flex {
+    margin-top: auto;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 576px) {
+  .buycard {
+    margin-bottom: 0.75rem;
+  }
+
+  .mobile-product-item .buycard .card-img-top {
+    width: 100px;
+    height: 100px;
+  }
+
+  .mobile-product-item .buycard .card-title {
+    font-size: 1rem !important;
+  }
+
+  .mobile-product-item .buycard .card-text {
+    font-size: 0.9rem !important;
+  }
 }
 
 .buy-btn {
@@ -62,14 +139,13 @@
   width: 5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 0.8rem;
-  transition: all 0.7s;
+  transition: all 0.7s ease;
   overflow: hidden;
-  transition: all 0.7s;
   box-shadow: 5px 5px 1px black;
-
+  cursor: pointer;
 }
-
 
 .buy-btn:hover {
   width: 6rem;
@@ -77,32 +153,37 @@
   box-shadow: none;
   background-color: black;
   border: 1px solid black;
-
-  .add-to-cart {
-    animation: slide 1.5s linear infinite;
-  }
-
-
+  transform: translateY(-10px);
+  transition: all 0.7s ease;
 }
 
+.buy-btn:hover .add-to-cart {
+  animation: slide 1.5s linear infinite;
+}
 
 .add-to-cart {
   position: absolute;
   display: flex;
   justify-self: center;
-  top: 40%;
-  left: 20%;
-  transform: translateX(-50%) scale(1.6);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(1.6);
   transition: all 0.4s ease-in-out;
   white-space: nowrap;
   text-transform: capitalize;
   color: white;
+  opacity: 0;
+}
+
+.buy-btn:hover .add-to-cart {
+  opacity: 1;
 }
 
 .cart-icon {
   transform: scale(1.6);
   display: flex;
   justify-content: center;
+  transition: opacity 0.4s ease-in-out;
 }
 
 @keyframes slide {
@@ -135,9 +216,7 @@
   100% {
     transform: translateY(-5px);
   }
-
 }
-
 
 .wobble {
   animation: wobble 1s infinite;
@@ -147,7 +226,7 @@
   background-color: blue;
 }
 
-.card-line{
+.card-line {
   background-color: black;
   border-color: black !important;
   border-width: 0rem;
@@ -161,14 +240,14 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.liked{
+.liked {
   color: red;
 }
 
-.liked-button:hover{
+.liked-button:hover {
   color: red;
 }
-.like-button-container{
+.like-button-container {
   position: relative;
   box-sizing: border-box;
   color: black;

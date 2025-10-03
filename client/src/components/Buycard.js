@@ -16,7 +16,7 @@ import toast from "react-hot-toast";
 import { Button, ButtonGroup } from "react-bootstrap";
 import { useLike } from "../context/Likedcontext";
 
-const Buycard = ({ product }) => {
+const Buycard = ({ product, isMobile }) => {
   const [showTitle, setShowTitle] = useState(false);
   const [isWobbling, setIsWobbling] = useState(false);
   const [count, setCount] = useState(0);
@@ -53,24 +53,29 @@ const Buycard = ({ product }) => {
     fetchCountFromCart();
     console.log(count);
   }, [cart]);
+
   return (
     <Card
       className="buycard"
       style={{
-       width: '24vw',
-
+        width: isMobile ? "100%" : "100%",
         border: "3px solid black",
         boxShadow: "5px 5px 1px black",
         minHeight: "35rem",
         maxHeight: "fit-content",
       }}
     >
+      {" "}
       <Card.Img
         variant="top"
         src={`${process.env.REACT_APP_API}/api/v1/product/prod-photo/${product._id}`}
         className="buycard-img"
+        style={{
+          width: "100%",
+          height: "250px",
+          objectFit: "cover",
+        }}
       />
-
       <Card.Body>
         <Card.Title className="text-center custom-font fs-1 ">
           {product.name}
