@@ -101,11 +101,6 @@
   align-items: center;
   text-align: center;
   gap: 0.5rem;
-  /* Add the same zoom responsiveness as login button */
-  min-width: 80px !important;
-  min-height: 35px !important;
-  max-width: 200px !important;
-  max-height: 70px !important;
 }
 
 .long-btn:hover,
