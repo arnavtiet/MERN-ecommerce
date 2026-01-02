@@ -51,24 +51,24 @@ const Buycard = ({ product, isMobile }) => {
 
   useEffect(() => {
     fetchCountFromCart();
-    console.log(count);
+    console.log(product);
   }, [cart]);
 
   return (
     <Card
       className="buycard"
-      style={{
-        width: isMobile ? "100%" : "100%",
-        border: "3px solid black",
-        boxShadow: "5px 5px 1px black",
-        minHeight: "35rem",
-        maxHeight: "fit-content",
-      }}
+      // style={{
+      //   width: isMobile ? "100%" : "100%",
+      //   border: "1px solid black",
+      //   boxShadow: "5px 5px 4px 1px black",
+      //   minHeight: "35rem",
+      //   maxHeight: "fit-content",
+      // }}
     >
       {" "}
       <Card.Img
         variant="top"
-        src={`${process.env.REACT_APP_API}/api/v1/product/prod-photo/${product._id}`}
+        src={product.imageUrl}
         className="buycard-img"
         style={{
           width: "100%",

@@ -39,8 +39,12 @@ const Login = () => {
           className: "custom-toast",
           duration: 4000,
         });
-        setAuth({ ...auth, user: res.data.user, token: res.data.token });
-        localStorage.setItem("auth", JSON.stringify(res.data));
+        const authData = {
+          user: res.data.user,
+          token: res.data.sessionId,
+        };
+        setAuth({ ...auth, user: authData.user, token: authData.token });
+        localStorage.setItem("auth", JSON.stringify(authData));
         setTimeout(() => {
           navigate(location.state || "/");
         }, 1000);

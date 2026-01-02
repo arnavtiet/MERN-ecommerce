@@ -13,6 +13,7 @@ const Admin = () => {
       const res = await axios.get(
         `${process.env.REACT_APP_API}/api/v1/auth/admin-auth`
       );
+      console.log("code was here");
       console.log(res.data);
       if (res.data.ok) {
         SetOk(true);

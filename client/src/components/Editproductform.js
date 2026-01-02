@@ -191,8 +191,8 @@ const Editproductform = ({ pid, pslug }) => {
             <Col sm={10}>
               <label className="btn btn-outline-secondary col-md-12">
                 {pic
-                  ? pic.name.split(" ")[0] +
-                    (pic.name.includes(" ") ? " ..." : "")
+                  ? pic?.name?.split(" ")[0] +
+                    (pic?.name?.includes(" ") ? " ..." : "")
                   : "Upload photo"}
 
                 <input

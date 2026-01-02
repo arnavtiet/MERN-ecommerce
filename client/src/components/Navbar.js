@@ -54,7 +54,7 @@ const Navigation = () => {
             <Nav className="me-auto">
               <Nav.Item className="nav-item-responsive">
                 <Link to="/Orders" onClick={() => setIsExpanded(false)}>
-                  <button className="long-btn-cart me-4 mt-1 fs-3">
+                  <button className="long-btn">
                     <Badge size="small" count={cartcount}>
                       <FontAwesomeIcon icon={faCartShopping} className="fs-4" />
                     </Badge>
@@ -69,7 +69,7 @@ const Navigation = () => {
                   }`}
                   onClick={() => setIsExpanded(false)}
                 >
-                  <button className="long-btn-cart me-4 mt-1 d-flex justify-content-center py-1">
+                  <button className="long-btn">
                     <FontAwesomeIcon
                       icon={faCircleUser}
                       className="fs-4 align-center"

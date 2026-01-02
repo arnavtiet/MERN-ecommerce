@@ -25,7 +25,7 @@ const Editcard = ({ product }) => {
       >
         <Card.Img
           variant="top"
-          src={`${process.env.REACT_APP_API}/api/v1/product/prod-photo/${product._id}`}
+          src={product.imageUrl}
           className="buycard-img"
         />
         <Card.Body>

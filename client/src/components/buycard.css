@@ -26,8 +26,8 @@
 
 .buycard:hover {
   transform: translateY(-5px);
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.3) !important;
-
+  box-shadow: 8px 8px 0px rgba(0, 0, 0) !important;
+  
   .buycard-img {
     transform: scale(1.1);
   }
@@ -37,6 +37,8 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 0 auto;
   overflow: hidden;
+  box-shadow: 6px 6px 0px black;
+  border : 3px solid black ;
 }
 
 .buycard-img {
@@ -110,7 +112,7 @@
 /* Extra small screens */
 @media (max-width: 576px) {
   .buycard {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .mobile-product-item .buycard .card-img-top {
@@ -141,7 +143,7 @@
   justify-content: center;
   align-items: center;
   padding: 0.8rem;
-  transition: all 0.7s ease;
+  transition: all 3s ease;
   overflow: hidden;
   box-shadow: 5px 5px 1px black;
   cursor: pointer;
@@ -154,11 +156,11 @@
   background-color: black;
   border: 1px solid black;
   transform: translateY(-10px);
-  transition: all 0.7s ease;
+  transition: all 3s ease;
 }
 
 .buy-btn:hover .add-to-cart {
-  animation: slide 1.5s linear infinite;
+  animation: slide 2s linear infinite;
 }
 
 .add-to-cart {

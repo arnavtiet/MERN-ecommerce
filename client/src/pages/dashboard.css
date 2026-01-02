@@ -779,7 +779,7 @@
 /* Sidebar zoom responsiveness */
 .container-fluid {
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  overflow-x: visible !important;
 }
 
 /* Override any fixed widths that might break on zoom */

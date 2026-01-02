@@ -8,7 +8,8 @@ const prodSchema = new mongoose.Schema(
     qty: { type: Number, required: true },
     price: { type: Number, required: true },
     shipped: { type: Boolean, required: true },
-    image: { data: Buffer, contentType: String },
+    imageUrl: { type: String, default: '' },
+    imagePublicId: { type: String, default: '' },
     category: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "categoryModel",

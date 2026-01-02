@@ -1,58 +1,77 @@
 const express = require("express");
-const { isAdmin, requireSignIn } = require("../middlewares/authMiddleware");
-const formidable = require("express-formidable");
+const { redisAuth, isAdmin } = require("../middlewares/redisAuth");
+const multer = require("multer");
+const path = require("path");
 const {
   createProdController,
   getProdController,
-  productPhotoController,
   updateProductController,
   getSingleProductController,
   deleteProductController,
   productFiltersController,
-  paymentTokenController,
   paymentController,
   tokenGen,
 } = require("../controllers/prodController");
 
 const routes = express.Router();
 
+// Configure multer for file uploads
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/');
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({
+  storage: storage,
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  fileFilter: function (req, file, cb) {
+    const filetypes = /jpeg|jpg|png|webp/;
+    const mimetype = filetypes.test(file.mimetype);
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    
+    if (mimetype && extname) {
+      return cb(null, true);
+    }
+    cb(new Error("Only image files are allowed!"));
+  }
+});
+
+// Product routes
 routes.post(
   "/create-prod",
-  requireSignIn,
+  redisAuth,
   isAdmin,
-  formidable(),
+  upload.single('image'),
   createProdController
 );
 
 routes.put(
   "/update-prod/:pid",
-  requireSignIn,
+  redisAuth,
   isAdmin,
-  formidable(),
+  upload.single('image'),
   updateProductController
 );
 
-//get products
+// Get products
 routes.get("/get-product", getProdController);
 
-// single product
+// Single product
 routes.get("/get-single-product/:slug", getSingleProductController);
 
-//get photo
-routes.get("/prod-photo/:pid", productPhotoController);
+// Delete product
+routes.delete("/delete-product/:pid", redisAuth, isAdmin, deleteProductController);
 
-//delete rproduct
-routes.delete("/delete-product/:pid", deleteProductController);
-// routes.get("/get-prod", requireSignIn, formidable(), getProdController);
-
+// Filter products
 routes.post("/prod-filter", productFiltersController);
 
-//payment routes
-
-//token
-// routes.get("/token", paymentTokenController);
-
+// Payment routes
 routes.get("/token", tokenGen);
-//payment
-routes.post("/payment", requireSignIn, paymentController);
+routes.post("/payment", redisAuth, paymentController);
+
 module.exports = { routes };

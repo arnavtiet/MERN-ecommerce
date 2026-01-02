@@ -98,7 +98,7 @@ const Dashboard = () => {
     //eslint-disable-next-line
   }, []);
   useEffect(() => {
-    if (!checked.length || !radio.length) getproducts();
+    if (!checked.length && !radio.length) getproducts();
   }, [checked.length, radio.length]);
   useEffect(() => {
     if (checked.length || radio.length) filterProduct();
@@ -293,7 +293,7 @@ const Dashboard = () => {
               {/* Product Grid/List Container */}
               <div
                 className={`${
-                  isMobile ? "mobile-product-list" : "row g-5 mb-2"
+                  isMobile ? "mobile-product-list" : "row g-5 mb-1"
                 }`}
               >
                 {filterloading ? (
@@ -315,6 +315,7 @@ const Dashboard = () => {
                       key={product._id}
                       initial={{ opacity: 0, x: -100 }}
                       whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{
                         delay: index * 0.1,
@@ -322,7 +323,6 @@ const Dashboard = () => {
                         type: "spring",
                         ease: "easeOut",
                       }}
-                      exit={{ opacity: 0, x: -100 }}
                       className={`${
                         isMobile
                           ? "mobile-product-item mb-3"

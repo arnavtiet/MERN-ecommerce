@@ -1,6 +1,8 @@
 const { hashPassword, compare } = require("../helper/authHelper.js");
 const user = require("../models/user.js");
-const OrderModel = require("../models/product");
+const OrderModel = require("../models/order");
+const { createSession } = require("../services/sessionService");
+const { v4: uuidv4 } = require('uuid');
 
 const usermodel = require("../models/user.js");
 const JWT = require("jsonwebtoken");
@@ -82,24 +84,25 @@ const loginController = async (req, res) => {
         .status(404)
         .send({ success: false, message: "password is invalid" });
     }
-    // return req.send({ existingUser });
-    const token = await JWT.sign(
-      { _id: existingUser._id },
-      process.env.JWT_SECRET,
-      { expiresIn: "7d" }
-    );
+    
+    // Create Redis session instead of JWT
+    const sessionId = uuidv4();
+    const userData = {
+      _id: existingUser._id,
+      name: existingUser.name,
+      email: existingUser.email,
+      phone: existingUser.phone,
+      address: existingUser.address,
+      role: existingUser.role,
+    };
+    
+    await createSession(sessionId, userData);
+    
     res.status(200).send({
       success: true,
       message: "Login success",
-      user: {
-        name: existingUser.name,
-        email: existingUser.email,
-        phone: existingUser.phone,
-        address: existingUser.address,
-        password: existingUser.password,
-        role: existingUser.role,
-      },
-      token,
+      user: userData,
+      sessionId,
     });
   } catch (error) {
     console.log(error);
@@ -168,7 +171,7 @@ const updateProfileController = async (req, res) => {
 const userordersController = async (req, res) => {
   try {
     const orders = await OrderModel.find({ buyer: req.user._id })
-      .populate("products", "-image")
+      .populate("products")
       .populate("buyer", "name");
     if (orders) {
       res.send(orders).status(200);
